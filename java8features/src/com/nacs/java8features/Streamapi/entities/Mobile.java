@@ -2,7 +2,7 @@ package com.nacs.java8features.Streamapi.entities;
 
 import java.util.Objects;
 
-public class Mobile {
+public class Mobile implements Comparable<Mobile> {
     private int serialId;
     private String manufacturer;
     private String model;
@@ -115,6 +115,12 @@ public class Mobile {
     @Override
     public int hashCode() {                                
         return Objects.hash(serialId, manufacturer, model, price, ram, processor, color, refreshrate);
+    }
+    @Override
+    public int compareTo(Mobile temp) {
+  //  	return this.ram-temp.ram;
+   // 	return this.manufacturer.compareTo(temp.manufacturer);
+  return (int)(this.price-temp.price); 
     }
 
     @Override
